@@ -1,0 +1,9 @@
+Design REST API
+
+Below are the steps:-
+
+1. Identify Object Models
+2. Create Model URI
+3. Determine Representation
+4. Assign HTTP methods
+5. More Actions

@@ -1,0 +1,22 @@
+HTTP Methods
+
+1.POST Create
+
+On successful creation, return HTTP status 201, returning a Location header with a link to the newly-created resource with the 201 HTTP status.
+
+It is neither safe not idempotent while below methods are idempotent
+
+2.GET Read
+Used to get resource from Server. Can be JSON or XML. It returns 200 in case of Success. It returns 404 Not Found or 400 Bad Request. 
+
+3.PUT Create/Update
+Put is used to create or update
+
+4.PATCH Modify
+PATCH is used for **modify** capabilities. The PATCH request only needs to contain the changes to the resource, not the complete resource.
+PATCH is neither safe nor idempotent.
+
+5.DELETE Delete 
+
+It returns 200 or 204 (No content) . 
+If the resource is not present, it returns 404 Not Found

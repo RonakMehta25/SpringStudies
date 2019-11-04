@@ -1,0 +1,22 @@
+REST API Versioning
+
+
+Versioning of an API is done to prevent breaking of client integration.
+
+APIs only need to be up-versioned when a breaking change is made. Breaking changes include:
+	1.a change in the format of the response data for one or more calls
+	2.a change in the response type (i.e. changing an integer to a float)
+	3.removing any part of the API. 
+	
+Different ways of Versioning
+
+1. Adding version in URI.
+It can break client integration. Also it does not follow API guideline
+http://api.example.com/v1
+http://apiv1.example.com
+
+
+2. Using Custom Request Header.
+
+
+3. Using Accept Header.

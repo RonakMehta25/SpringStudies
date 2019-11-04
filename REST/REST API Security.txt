@@ -1,0 +1,17 @@
+REST API Security
+
+Since REST API need to be stateless. Thus authentication/authorization should not be in cookies/sessions
+
+It should be present in every API request
+
+Always Use HTTPS
+
+Use Password Hash
+
+Never expose information on URLs
+
+Input Parameter Validation
+
+Consider Adding Timestamp in Request
+
+Consider OAuth

@@ -1,0 +1,14 @@
+Spring JPA
+
+Here we use Entity Manager with JPA API
+
+For Creating new record, we use persist(theEmployee).
+
+For Finding a record , we use find(Employee.class,id)
+
+For Selecting all record, we use createQuery("From Employee",Employee.class) followed by getResultList()
+
+For Updating a record , we use merge(theEmployee)
+
+For Deleing a record, we use createQuery and pass Parameter and then executeUpdate
+

@@ -1,0 +1,61 @@
+Welcome to REST Apartment
+
+REST is for Representational State Transfer because we represent you to transfer state.
+
+It is an architectural style.It defines how applications communicate over the Hypertext Transfer Protocol (HTTP). Applications that use REST are loosely-coupled and transfer information quickly and efficiently. While REST doesn’t define data formats, it’s usually associated with exchanging JSON or XML documents between a client and a server.
+
+This Apartment was built by Roy Fielding in 2000
+
+We are a delivery system.
+
+Some of the ways (Principle) you live in this apartment is
+1. Client - Server : We strictly believe in doing work by ourself
+
+2. Stateless  - There is no corruption in our system . Every request is treated independently regardless of previous ones.
+
+3. Uniform Interface - We have just one link through which anyone can contact us.
+
+4. Cacheble - If we are getting multiple request, we will keep it in the front.
+
+5. Layered system
+
+6. Code on demand
+
+Our Delivery System always returns uniform answer : Json
+
+The most basic unit of abstraction is resource 
+
+resource can be singletion and collection
+
+For example, “customers” is a collection resource and “customer” is a singleton resource (in a banking domain). 
+
+We can identify “customers” collection resource using the URI “/customers”. We can identify a single “customer” resource using the URI “/customers/{customerId}”.
+
+A resource may contain sub-collection resources also. 
+
+For example, sub-collection resource “accounts” of a particular “customer” can be identified using the URN “/customers/{customerId}/accounts” (in a banking domain). 
+
+Similarly, a singleton resource “account” inside the sub-collection resource “accounts” can be identified as follows: “/customers/{customerId}/accounts/{accountId}”.
+
+REST APIs use Uniform Resource Identifiers (URIs) to address resources. 
+
+
+REST Resource Naming Best Practices
+
+1. Use nouns to represent resources
+
+resource archetypes into four categories (document, collection, store and controller)
+2. Use hyphens (-) to improve the readability of URIs
+
+3. Do not use underscores 
+
+4. Use lowercase letters in URIs
+
+5. Do not use file extenstions
+
+6. Use query component to filter URI collection
+
+http://api.example.com/device-management/managed-devices
+http://api.example.com/device-management/managed-devices?region=USA
+http://api.example.com/device-management/managed-devices?region=USA&brand=XYZ
+http://api.example.com/device-management/managed-devices?region=USA&brand=XYZ&sort=installation-date

@@ -1,0 +1,22 @@
+HTTP Status Code
+
+1xx : Informational
+
+2xx : Success
+	1.200 - OK
+	2.201 - Created.
+	3.202 - Accepted.
+	4.204 - No Content.
+
+
+300 : Redirection
+304 : Not Modified
+4xx : Client Error
+	1. 400 - Bad Request.
+	2. 401 - Unauthorized.
+	3. 403 - Forbidden.
+	4. 404 - Not Found
+
+5xx : Internal Server Error 
+	1. 501 - Internal Server Error.
+	2. 503 - Service Not Available

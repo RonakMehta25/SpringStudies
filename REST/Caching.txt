@@ -1,0 +1,54 @@
+Caching
+
+Caching is the ability to store copies of frequently accessed data in several places along the request-response path.
+
+
+Usually, browsers treat all GET requests cacheable. 
+
+
+POST requests are not cacheable by default but can be made cacheable if either an Expires header or a Cache-Control header with a directive, to explicitly allows caching, is added to the response. 
+
+
+Responses to PUT and DELETE requests are not cacheable at all.
+
+There are two main HTTP response headers that we can use to control caching behavior:
+
+Expires
+
+The Expires HTTP header specifies an absolute expiry time for a cached representation. 
+
+Cache-Control
+The header value comprises one or more comma-separated directives. These directives determine whether a response is cacheable, and if so, by whom, and for how long e.g. max-age or s-maxage directives.
+
+Cache-Control: max-age=3600
+Cacheable responses (whether to a GET or to a POST request) should also include a validator — either an ETag or a Last-Modified header.
+
+ETag
+An ETag value is an opaque string token that a server associates with a resource to uniquely identify the state of the resource over its lifetime. When the resource changes, the ETag changes accordingly.
+
+How it works?
+Followings are the general high level steps where response header 'ETag' along with conditional request header 'If-None-Match' is used to cache the resource copy in the client browser:
+
+Server receives a normal HTTP request for a particular resource, say XYZ.
+
+The server side prepares the response. The server side logic wants the browser to cache XYZ locally. By default all browsers always cache the resources (specification) so no special header in the response is needed.
+
+Server includes the header 'ETag' with it's value in the response:
+ ETag: "version1"
+
+Server sends the response with above header, content of XYZ in the body and with the status code 200. The browser renders the resource and at the same time caches the resource copy along with header information.
+
+Later the same browser makes another request for the same resource XYZ. with following conditional request header:
+If-None-Match: "version1"
+
+On receiving the request for XYZ along with 'If-None-Match' header, the server side logic checks whether XYZ needs a new copy of the resource by comparing the current value of the ETag identifier on the server side and the one which is received in the request header.
+If request's If-None-Match is same as currently generated/assigned value of ETag on the server, then status code 304 (Not Modified) with the empty body is sent back and the browser uses cached copy of XYZ.
+If request's If-None-Match value doesn't match the currently generated/assigned value of ETag (say "version2") for XYZ then server sends back the new content in the body along with status code 200. The 'ETag' header with the new value is also included in the response. The browser uses the new XYZ and updates its cache with the new data.
+
+
+'Last-Modified' response header is sent by the server to specify the last modified date of the requested resource. Example:
+
+ Last-Modified: Tue, 20 Oct 2015 07:28:20 GMT 
+'If-Modified-Since' request header is sent by the browser to specify the last modified date of the cached copy of the resource (saved in the browser). The value of this header is same as the value of the previously received 'Last-Modified' header. Example:
+
+ If-Modified-Since: Tue, 20 Oct 2015 07:28:20 GMT 
