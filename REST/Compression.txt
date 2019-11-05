@@ -1,0 +1,17 @@
+Compression
+
+Compression can be done by the server while replying to the request by the client.
+
+The client should send which type of compression it supports. 
+
+It specifies this information in accept-Encoding in head
+
+GET        /employees         HTTP/1.1
+Host:     www.domain.com
+Accept:     text/html
+Accept-Encoding:     gzip,compress
+
+
+Now if the server does not support any of the encoding mentioned by client then server sends status code 406 (Not Acceptable)
+
+Now when server compress the resource , it sends the compression type in content-encoding.

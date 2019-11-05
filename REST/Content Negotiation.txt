@@ -1,0 +1,29 @@
+Content Negotiation
+
+Resource can be represented in many different ways like json,xml etc.
+
+Also client can expect different representation.
+
+When client handles the resource representation negotiation , it is called client side negotiation.
+
+When server handles it , it is called server side negotiation.
+
+When server sends the resource in one representation, it notifies it by content-type
+
+Also client can send accepted type in the accept header.
+
+Also content negotiation can be done by URL patterns.
+
+http://rest.api.com/v1/employees/20423.xml
+http://rest.api.com/v1/employees/20423.json
+
+If is possible to have multiple values in Accept header. Client may want to give multiple values in accept header when client is not sure about if its desired representation is present or supported by server at that time. 
+
+
+For example,
+
+Accept: application/json,application/xml;q=0.9,*/*;q=0.8
+
+Above Accept header allows you to ask the server a JSON format. If it can’t, perhaps it could return XML format (the second level). If it’s still not possible, let it return what it can.
+
+The preference order is defined through the q parameter with values from 0 to 1. When nothing is specified, the implicit value is 1.

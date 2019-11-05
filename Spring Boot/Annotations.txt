@@ -1,0 +1,3 @@
+Annotation
+
+@Transactional means you don't have to manually start or commit transactions
