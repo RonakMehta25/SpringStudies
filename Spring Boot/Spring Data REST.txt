@@ -1,0 +1,17 @@
+Just like Spring Data JPA which helps to eliminate boilerplate code for DAO.
+
+Can we do the same for REST API.
+
+For example,for employee you created REST controller and service. So can there be a general code where you can just pass class and you get all methods for free.
+
+it is Spring Data REST.
+
+It gives all http methods and you just have to pass class and primary key.
+
+To use SPring Data REST, just add the dependency, have entity class and create entityRepo extends JPARepository
+
+We can do sorting , pagination and configuration
+
+For exposing a resource with different endpoint , just use annotation RepositoryRestResource(path="members")
+
+you can do sorting by using url?sort=firstName,lastName,desc

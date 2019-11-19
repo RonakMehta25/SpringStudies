@@ -1,0 +1,20 @@
+Spring Data JPA
+
+So we create DAO for employee . What if we have more object like books , cars etc. Do we need to repeat the code for all object. 
+
+If we closely look at it . The only thing specific in the DAO for employee is the employee class and id.
+
+That is Class type and ID.
+
+What if I could give spring,any Class type and id then spring could return  all CRUD methods for free. Can we do that ?
+
+Spring Data JPA project will help in that .
+
+Just plug in your entity type and id then you have DAO
+
+It provides JPArepository interface
+
+Steps are
+
+1. Make a employeeRepository Extend JPArepository<Class,Integer> interface without any implementation
+2. Use it in application by using findAll and all other methods on employeeRepository

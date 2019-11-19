@@ -1,0 +1,5 @@
+Bean Lifecycle
+
+1. init-method="methodName()"
+
+2. destroy-method="methodName()"

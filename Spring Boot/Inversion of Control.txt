@@ -1,0 +1,22 @@
+Inversion of Control
+
+It is outsourcing of construction and management of object.
+
+This outsourcing is handled by object factory.
+
+Spring provides object factory so application can request for an object based on configuration or annotation.
+
+Thus the role of Spring Container :
+
+1. Inversion of control 
+2. Inject Object Dependencies
+
+Two ways to configure Spring Container.
+
+1. XML
+2. Annotation
+3. Java Code
+
+In case of xml, we specify object absolute class path and it's id. Now in application , by using that id, we can request for the object of that class.
+
+We specify the object path and id in bean

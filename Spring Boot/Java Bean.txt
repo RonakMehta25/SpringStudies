@@ -1,0 +1,19 @@
+Java Bean 
+
+Scopes :- Lifecycle of a bean
+
+
+1. Singleton (Default)
+Default scope for a bean is singleton. This bean will be shared between between objects.
+
+you can specify the scope in bean
+<bean id="" class="" scope="">
+
+2.Prototype.
+Creates new Object for every request.
+
+3. request
+
+4. Session
+
+5. global-session

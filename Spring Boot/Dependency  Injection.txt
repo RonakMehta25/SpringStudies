@@ -1,0 +1,23 @@
+Dependency injection
+
+
+The object dependencies that client needs are created by the spring.
+
+Most common type of Spring Dependency:-
+
+1. Constructor Injection
+2. Setter Injection
+
+1. Constructor Injection.
+
+For injection of dependencies in constructor, specify the id of the object you want in your base class bean  as below :-
+
+<bean id="" class="">
+<constructor-arg ref="injected class id">
+</bean>
+
+While in case setter injection, we use as below
+
+<bean id="" class="">
+<property name="methodName" ref="id">
+</bean>

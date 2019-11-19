@@ -1,0 +1,9 @@
+Spring DAO
+
+when you want to create DAO for your REST project, make a DAO interface.
+
+Then you can create Hibernate or JAP implementation of it and pass it at runtime.
+
+This way, if you change your implementation or add new implementation, you would be able to do it without minimal code change.
+
+This interface contains all the methods that are needed in implementation of DAO layer
